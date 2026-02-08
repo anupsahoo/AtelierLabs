@@ -1,12 +1,26 @@
 # Agents
 
-Self-contained agent projects. Each agent has a clear purpose, defined inputs, and observable behavior.
+Every project in this folder is a self-contained AI agent — small, readable, and complete. Each agent lives in its own subfolder with independent dependencies, tests, configuration, and documentation. No agent depends on another. This isolation is intentional and allows the repository to scale to hundreds of agents without coupling or conflict.
 
-Every project in this folder represents an autonomous system that can perceive its environment, reason about what it observes, and take deliberate action. Agents here are designed to be small, readable, and complete. They are not fragments of a larger system.
+## Convention
 
-## What to expect
+Every agent follows the same project structure:
 
-- Each agent lives in its own subfolder
-- Entry points are clearly named
-- Decision logic is separated from execution
-- Human-in-the-loop checkpoints are explicit where present
+```
+<agent_name>/
+  pyproject.toml          # Dependencies and CLI entrypoint
+  .env.example            # Required environment variables
+  Makefile                # setup, lint, typecheck, test, run, docker-build, docker-run
+  Dockerfile              # Container-ready
+  README.md               # Purpose, usage, configuration
+  src/<agent_name>/       # Source code (src layout)
+  tests/                  # Unit tests
+```
+
+To run any agent: enter its folder, copy `.env.example` to `.env`, set your keys, and run `make setup && make run`.
+
+## Agent Index
+
+| Agent | Description | Docs |
+|-------|-------------|------|
+| **[Autonomy Gatekeeper](autonomy_gatekeeper/)** | AI governance agent — decides whether to ACT, HOLD, or ESCALATE | [README](autonomy_gatekeeper/README.md) |

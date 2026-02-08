@@ -1,0 +1,42 @@
+# Autonomy Gatekeeper — Policy Rules
+#
+# Each rule defines a pattern that, when matched, influences the governance
+# decision. Rules are evaluated in order. The first matching escalation or
+# hold rule takes precedence.
+
+rules:
+  - id: PROD_DEPLOY
+    description: "Production deployments require human approval"
+    keywords: ["production", "deploy", "release", "rollout"]
+    decision: ESCALATE
+    risk_level: critical
+
+  - id: DATA_DELETE
+    description: "Data deletion operations require human approval"
+    keywords: ["delete", "drop", "truncate", "purge", "destroy"]
+    decision: ESCALATE
+    risk_level: critical
+
+  - id: ACCESS_CHANGE
+    description: "Access or permission changes need clarification"
+    keywords: ["permission", "access", "role", "privilege", "grant", "revoke"]
+    decision: HOLD
+    risk_level: high
+
+  - id: CONFIG_CHANGE
+    description: "Configuration changes need clarification"
+    keywords: ["config", "configuration", "setting", "environment variable"]
+    decision: HOLD
+    risk_level: medium
+
+  - id: READ_ONLY
+    description: "Read-only operations can proceed autonomously"
+    keywords: ["read", "list", "describe", "get", "fetch", "query", "status"]
+    decision: ACT
+    risk_level: low
+
+  - id: MONITORING
+    description: "Monitoring and observability actions can proceed"
+    keywords: ["monitor", "log", "metric", "alert", "health", "check"]
+    decision: ACT
+    risk_level: low
