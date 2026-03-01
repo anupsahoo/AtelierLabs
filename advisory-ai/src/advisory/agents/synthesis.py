@@ -2,11 +2,11 @@
 
 from typing import Any, Dict, List
 
-from board.agents.base import Agent, AgentOutput
+from advisory.agents.base import Agent, AgentOutput
 
 
 class SynthesisAgent(Agent):
-    """Agent that synthesizes feedback from all board members into actionable plan."""
+    """Agent that synthesizes feedback from all advisory members into actionable plan."""
     
     def synthesize(self, content: str, critiques: List[AgentOutput]) -> AgentOutput:
         """Synthesize multiple critiques into unified actionable plan."""
@@ -30,15 +30,15 @@ class SynthesisAgent(Agent):
         
         return AgentOutput(
             agent_name="Board Synthesis: Unified Action Plan",
-            brutal_line=parsed.get('brutal_line', "The board agrees: you need to focus, find leverage, avoid stupidity, serve others, and build moats."),
+            brutal_line=parsed.get('brutal_line', "The advisory agrees: you need to focus, find leverage, avoid stupidity, serve others, and build moats."),
             key_questions=parsed.get('key_questions', [
                 "What's the single most important thing to validate first?",
-                "Which board member's advice should you prioritize and why?",
+                "Which advisory member's advice should you prioritize and why?",
                 "What would success look like in 90 days?",
-                "What's the biggest risk that all board members agree on?"
+                "What's the biggest risk that all advisory members agree on?"
             ]),
             assumptions=parsed.get('assumptions', [
-                "SYNTHESIS: Multiple board members identified similar assumptions",
+                "SYNTHESIS: Multiple advisory members identified similar assumptions",
                 "CONSENSUS: All agree on the core market/user validation needs",
                 "DISAGREEMENT: Tension between short-term execution and long-term vision"
             ]),
@@ -47,7 +47,7 @@ class SynthesisAgent(Agent):
                 "Ignoring the consensus warnings about market/competition",
                 "Choosing the wrong lens to prioritize for next phase"
             ]),
-            bold_move=parsed.get('bold_move', "Pick one board member's lens as your primary filter for the next 90 days."),
+            bold_move=parsed.get('bold_move', "Pick one advisory member's lens as your primary filter for the next 90 days."),
             scorecard=parsed.get('scorecard', {
                 "Board Consensus": 7,
                 "Action Clarity": 6,
@@ -56,7 +56,7 @@ class SynthesisAgent(Agent):
             }),
             experiment_plan=parsed.get('experiment_plan', {
                 "hypothesis": "Focusing on the highest-consensus recommendations will yield fastest validation",
-                "success_metrics": "Progress on top 3 board recommendations, risk mitigation, strategic clarity",
+                "success_metrics": "Progress on top 3 advisory recommendations, risk mitigation, strategic clarity",
                 "action_steps": "Choose primary lens, address top consensus risks, validate core assumptions"
             }),
             references=unique_refs[:5]  # Top 5 unique references
@@ -82,7 +82,7 @@ class SynthesisAgent(Agent):
         
         critiques_text = "\n\n".join(critique_summaries)
         
-        return f"""You are synthesizing feedback from a board of AI advisors. Your job is to reconcile disagreements, identify consensus, and create one unified action plan.
+        return f"""You are synthesizing feedback from a advisory of AI advisors. Your job is to reconcile disagreements, identify consensus, and create one unified action plan.
 
 ORIGINAL CONTENT:
 {content}
@@ -95,12 +95,12 @@ Provide synthesis in this exact structure:
 BRUTAL TRUTH: [One line that captures the board's consensus on the biggest issue]
 
 BOARD CONSENSUS:
-- [What all/most board members agree on]
+- [What all/most advisory members agree on]
 - [Second area of strong agreement]
 - [Third consensus point]
 
 KEY DISAGREEMENTS:
-- [Where board members conflict and why]
+- [Where advisory members conflict and why]
 - [How to resolve the tension]
 
 UNIFIED RECOMMENDATIONS:
@@ -110,21 +110,21 @@ UNIFIED RECOMMENDATIONS:
 
 KEY QUESTIONS:
 - What's the single most important thing to validate first?
-- Which board member's advice should you prioritize and why?
+- Which advisory member's advice should you prioritize and why?
 - What would success look like in 90 days?
 - [One more strategic question]
 
 ASSUMPTIONS:
-- SYNTHESIS: [What multiple board members identified]
+- SYNTHESIS: [What multiple advisory members identified]
 - CONSENSUS: [What all agree needs validation]
 - DISAGREEMENT: [Where there's productive tension]
 
 RISKS:
 - [Risk of trying to do everything at once]
-- [Consensus risk all board members identified]
+- [Consensus risk all advisory members identified]
 - [Risk of ignoring important minority opinion]
 
-BOLD MOVE: [One action that addresses multiple board concerns simultaneously]
+BOLD MOVE: [One action that addresses multiple advisory concerns simultaneously]
 
 SCORECARD:
 - Board Consensus: X/10
@@ -132,9 +132,9 @@ SCORECARD:
 - Risk Mitigation: X/10
 - Strategic Focus: X/10
 
-90-DAY UNIFIED PLAN: [Concrete plan that synthesizes the best advice from all board members]
+90-DAY UNIFIED PLAN: [Concrete plan that synthesizes the best advice from all advisory members]
 
-Focus on: What does the board agree on? Where do they disagree and why? What's the unified path forward?"""
+Focus on: What does the advisory agree on? Where do they disagree and why? What's the unified path forward?"""
     
     def _format_top_scores(self, scorecard: Dict[str, int]) -> str:
         """Format top 2 scores from scorecard."""

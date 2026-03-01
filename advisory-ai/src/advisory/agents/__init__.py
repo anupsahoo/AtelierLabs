@@ -1,4 +1,4 @@
-"""Board of Directors Agents package."""
+"""Advisory AI package."""
 
 from .base import Agent, AgentOutput
 from .jobs import JobsAgent

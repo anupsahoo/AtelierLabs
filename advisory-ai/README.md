@@ -1,8 +1,8 @@
-# Board of Directors Agents
+# Advisory AI
 
-What if you could get brutally honest feedback on your business ideas from a board of world-class advisors? What if Steve Jobs could tell you what to cut, Charlie Munger could show you how your idea fails, and Naval Ravikant could map your leverage points?
+What if you could get brutally honest feedback on your business ideas from world-class advisors? What if Steve Jobs could tell you what to cut, Charlie Munger could show you how your idea fails, and Naval Ravikant could map your leverage points?
 
-**Board of Directors Agents** gives you exactly that - 5 AI agents inspired by legendary thinkers, each providing structured critique through their unique lens. No sugar-coating, no false encouragement, just the kind of feedback that turns good ideas into great ones.
+**Advisory AI** gives you exactly that - 5 AI agents inspired by legendary thinkers, each providing structured critique through their unique lens. No sugar-coating, no false encouragement, just the kind of feedback that turns good ideas into great ones.
 
 ## The Problem
 
@@ -33,40 +33,40 @@ curl -fsSL https://ollama.ai/install.sh | sh
 ollama pull llama2
 
 # Clone and setup
-git clone https://github.com/anupsahoo/board-of-directors-agents
-cd board-of-directors-agents
+git clone https://github.com/anupsahoo/advisory-ai
+cd advisory-ai
 make setup
 
 # Verify everything works
-board doctor
+advisory doctor
 
 # Get feedback on your idea
-board critique --input examples/idea.md
+advisory critique --input examples/idea.md
 ```
 
 ## Usage Examples
 
 ### Full Board Critique (Default)
 ```bash
-board critique --input my-idea.md --output critique.md
+advisory critique --input my-idea.md --output critique.md
 ```
 Gets feedback from all 5 agents plus synthesis.
 
 ### Single Lens Analysis
 ```bash
-board critique --lens jobs --input my-idea.md
-board critique --lens naval --input my-idea.md  
-board critique --lens munger --input my-idea.md
+advisory critique --lens jobs --input my-idea.md
+advisory critique --lens naval --input my-idea.md  
+advisory critique --lens munger --input my-idea.md
 ```
 
 ### JSON Output for Automation
 ```bash
-board critique --input my-idea.md --json --output results.json
+advisory critique --input my-idea.md --json --output results.json
 ```
 
 ### Interactive Mode
 ```bash
-board critique --input my-idea.md --interactive
+advisory critique --input my-idea.md --interactive
 ```
 Agents ask clarifying questions before providing feedback.
 
@@ -75,7 +75,7 @@ Agents ask clarifying questions before providing feedback.
 Each agent provides:
 
 - **Brutal One-Liner**: The harsh truth in one sentence
-- **Key Questions**: What they'd ask in a real board meeting
+- **Key Questions**: What they'd ask in a real advisory meeting
 - **Assumptions Analysis**: What you're taking for granted
 - **Risk Assessment**: What could go wrong and why
 - **Bold Move**: One counterintuitive action to consider
@@ -182,7 +182,7 @@ prompts/
 ```bash
 # Process multiple ideas
 for idea in ideas/*.md; do
-    board critique --input "$idea" --output "critiques/$(basename "$idea")"
+    advisory critique --input "$idea" --output "critiques/$(basename "$idea")"
 done
 ```
 
@@ -191,7 +191,7 @@ done
 # .github/workflows/idea-review.yml
 - name: Review Product Ideas
   run: |
-    board critique --input product-ideas.md --json --output review.json
+    advisory critique --input product-ideas.md --json --output review.json
     # Parse results and comment on PR
 ```
 
@@ -224,7 +224,7 @@ make lint
 ### Ollama Issues
 ```bash
 # Check if Ollama is running
-board doctor
+advisory doctor
 
 # Install/update Ollama
 curl -fsSL https://ollama.ai/install.sh | sh
@@ -250,7 +250,7 @@ ollama pull llama2
 
 This tool embodies the same independence philosophy as our [Atelier Lab](https://anupsahoo.dev/atelier-lab) - complete self-containment, no external dependencies, and full control over your data and processes.
 
-Just like our 35+ thinking agents, each board member is designed to:
+Just like our 35+ thinking agents, each advisory member is designed to:
 - Work independently without shared state
 - Provide transparent reasoning processes  
 - Operate offline-first with cloud as optional

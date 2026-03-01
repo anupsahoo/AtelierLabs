@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 import yaml
 
-from board.retrieval.blog_refs import (
+from advisory.retrieval.blog_refs import (
     load_blog_index,
     get_references_by_tags,
     get_all_tags
@@ -62,7 +62,7 @@ def test_load_blog_index_missing_file():
 def test_get_references_by_tags(sample_blog_index):
     """Test getting references by tag matching."""
     # Mock the load function to use our test file
-    import board.retrieval.blog_refs
+    import advisory.retrieval.blog_refs
     original_load = board.retrieval.blog_refs.load_blog_index
     board.retrieval.blog_refs.load_blog_index = lambda: load_blog_index(str(sample_blog_index))
     
@@ -90,7 +90,7 @@ def test_get_references_by_tags(sample_blog_index):
 def test_get_all_tags(sample_blog_index):
     """Test getting all unique tags."""
     # Mock the load function
-    import board.retrieval.blog_refs
+    import advisory.retrieval.blog_refs
     original_load = board.retrieval.blog_refs.load_blog_index
     board.retrieval.blog_refs.load_blog_index = lambda: load_blog_index(str(sample_blog_index))
     
@@ -111,7 +111,7 @@ def test_get_all_tags(sample_blog_index):
 
 def test_get_references_case_insensitive(sample_blog_index):
     """Test that tag matching is case insensitive."""
-    import board.retrieval.blog_refs
+    import advisory.retrieval.blog_refs
     original_load = board.retrieval.blog_refs.load_blog_index
     board.retrieval.blog_refs.load_blog_index = lambda: load_blog_index(str(sample_blog_index))
     

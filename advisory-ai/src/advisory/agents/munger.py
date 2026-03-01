@@ -2,7 +2,7 @@
 
 from typing import Any, Dict
 
-from board.agents.base import Agent, AgentOutput
+from advisory.agents.base import Agent, AgentOutput
 
 
 class MungerAgent(Agent):

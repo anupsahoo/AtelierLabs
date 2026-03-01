@@ -27,7 +27,7 @@ class AgentOutput(BaseModel):
 
 
 class Agent(ABC):
-    """Base class for all board member agents."""
+    """Base class for all advisory member agents."""
     
     def __init__(self, provider: Any) -> None:
         """Initialize agent with AI provider."""
@@ -50,7 +50,7 @@ class Agent(ABC):
     
     def _get_blog_references(self, tags: List[str]) -> List[Dict[str, str]]:
         """Get relevant blog references based on tags."""
-        from board.retrieval.blog_refs import get_references_by_tags
+        from advisory.retrieval.blog_refs import get_references_by_tags
         return get_references_by_tags(tags)
     
     def _parse_response(self, response: str) -> Dict[str, Any]:

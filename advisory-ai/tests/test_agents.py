@@ -4,11 +4,11 @@ from unittest.mock import Mock
 
 import pytest
 
-from board.agents.base import AgentOutput
-from board.agents.jobs import JobsAgent
-from board.agents.naval import NavalAgent
-from board.agents.munger import MungerAgent
-from board.agents.synthesis import SynthesisAgent
+from advisory.agents.base import AgentOutput
+from advisory.agents.jobs import JobsAgent
+from advisory.agents.naval import NavalAgent
+from advisory.agents.munger import MungerAgent
+from advisory.agents.synthesis import SynthesisAgent
 
 
 @pytest.fixture

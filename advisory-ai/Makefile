@@ -2,7 +2,7 @@
 
 # Default target
 help:
-	@echo "Board of Directors Agents - AI Advisory System"
+	@echo "Advisory AI - AI Advisory System"
 	@echo ""
 	@echo "Available commands:"
 	@echo "  setup       - Install package and dependencies"
@@ -15,7 +15,7 @@ help:
 
 setup:
 	pip install -e .
-	@echo "✅ Setup complete! Try: board doctor"
+	@echo "✅ Setup complete! Try: advisory doctor"
 
 dev:
 	pip install -e ".[dev]"
@@ -28,13 +28,13 @@ lint:
 	mypy src/
 
 test:
-	pytest tests/ -v --cov=board --cov-report=term-missing
+	pytest tests/ -v --cov=advisory --cov-report=term-missing
 
 doctor:
-	board doctor
+	advisory doctor
 
 run-example:
-	board critique --input examples/idea.md --output examples/output.md
+	advisory critique --input examples/idea.md --output examples/output.md
 	@echo "✅ Example complete! Check examples/output.md"
 
 clean:

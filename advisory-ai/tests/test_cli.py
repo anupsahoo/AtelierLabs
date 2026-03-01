@@ -8,7 +8,7 @@ from unittest.mock import Mock, patch
 import pytest
 from typer.testing import CliRunner
 
-from board.cli import app
+from advisory.cli import app
 
 
 @pytest.fixture
@@ -23,7 +23,7 @@ def sample_idea_file():
     with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as f:
         f.write("""# Test Idea
         
-This is a test business idea for the board to critique.
+This is a test business idea for the advisory to critique.
 It involves building a revolutionary new product that will change the world.
         """)
         f.flush()
@@ -142,4 +142,4 @@ def test_version_command(runner):
     result = runner.invoke(app, ["version"])
     
     assert result.exit_code == 0
-    assert "Board of Directors Agents" in result.stdout
+    assert "Advisory AI" in result.stdout
