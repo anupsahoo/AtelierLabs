@@ -1,0 +1,25 @@
+"""
+LeverageFinderAgent
+
+Placeholder implementation. Replace `process_input` with real logic.
+"""
+
+
+from .core.base_agent import CognitiveAgent, AgentResult
+from .core.mental_models import MentalModelsLibrary
+
+
+class LeverageFinderAgent(CognitiveAgent):
+    """Agent implementation coming soon."""
+
+    def __init__(self):
+        super().__init__(
+            name="LeverageFinder",
+            category="strategy",
+            mental_models=[],
+            description="Implementation coming soon",
+            capabilities=[]
+        )
+
+    async def process_input(self, input_data, context=None) -> AgentResult:
+        raise NotImplementedError("LeverageFinderAgent is not implemented yet")
