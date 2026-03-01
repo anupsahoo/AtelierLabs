@@ -1,0 +1,54 @@
+# Blog Index for Board of Directors Agents
+# Articles referenced by agents based on tag matching
+
+- title: "First Principles Thinking in Product Development"
+  url: "https://anupsahoo.dev/ai-landscape/ai-agent-frameworks"
+  tags: ["first-principles", "product", "simplicity", "user-experience"]
+
+- title: "Building Leverage Through Code and Automation"
+  url: "https://anupsahoo.dev/architecture/custom-subscription-system"
+  tags: ["leverage", "automation", "scalability", "independence"]
+
+- title: "Mental Models for Strategic Decision Making"
+  url: "https://anupsahoo.dev/ai-landscape/ai-ethics-frameworks"
+  tags: ["mental-models", "strategy", "decision-making", "biases"]
+
+- title: "The Inversion Principle: Learning from Failure"
+  url: "https://anupsahoo.dev/ai-landscape/ai-workflow-automation"
+  tags: ["inversion", "failure", "mental-models", "systems-thinking"]
+
+- title: "Network Effects and Competitive Moats"
+  url: "https://anupsahoo.dev/learning-paths"
+  tags: ["network-effects", "moats", "competition", "strategy"]
+
+- title: "Dharmic Business: Purpose Beyond Profit"
+  url: "https://anupsahoo.dev/atelier-lab"
+  tags: ["dharma", "purpose", "ethics", "long-term", "sustainability"]
+
+- title: "Pricing Power and Market Dynamics"
+  url: "https://anupsahoo.dev/architecture"
+  tags: ["pricing", "market-power", "capitalism", "competition"]
+
+- title: "User Experience and Simplicity Design"
+  url: "https://anupsahoo.dev/playbooks"
+  tags: ["user-experience", "design", "simplicity", "focus"]
+
+- title: "Wealth Creation Through Leverage"
+  url: "https://anupsahoo.dev/about"
+  tags: ["wealth", "leverage", "scalability", "automation"]
+
+- title: "Cognitive Biases in Business Planning"
+  url: "https://anupsahoo.dev/newsletter"
+  tags: ["biases", "psychology", "planning", "mental-models"]
+
+- title: "Building Sustainable Competitive Advantages"
+  url: "https://anupsahoo.dev/ai-landscape/enterprise-ai-platforms"
+  tags: ["moats", "competitive-advantage", "strategy", "monopoly"]
+
+- title: "Long-term Thinking and Stakeholder Capitalism"
+  url: "https://anupsahoo.dev/ai-landscape/ai-for-marketing"
+  tags: ["long-term", "stakeholders", "sustainability", "ethics"]
+
+- title: "The Philosophy of Independent Systems"
+  url: "https://anupsahoo.dev/ai-landscape/ai-ethics-frameworks"
+  tags: ["independence", "philosophy", "systems-thinking", "autonomy"]
